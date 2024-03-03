@@ -12,7 +12,7 @@ flowchart TD;
     A(Inicio) -->B[Numero n]
     B -->F[Lista de n > 2]
     F -->Q[ 0 < i]
-    Q -->J[ i <= 10 ]
+    Q -->J[ i >= 10 ]
     J -->K[z > n]
     K -->C[2*i 
     Multiplicando 2 por todos los valores 
