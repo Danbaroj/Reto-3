@@ -8,8 +8,37 @@
 
     n : entero
     Z : entero
+
     Inicio
-    i: 0 < i <= 10      
+
+        Mientras 2 < n
+
+        Mientras (0 < i <= 10) hacer
+
+            Si n = 2*i  Entonces
+
+                Escribir (" n no es primo ");
+
+            Si no Si n ≠ 2*1 Entonces
+
+                Escribir (" n es primo ");
+
+            Fin Mientras  n < z hacer
+
+                Si z = n*1 Entonces
+
+                    Escribir (" z no es primo");
+
+                Si no Si z ≠ n*1
+
+                    Escribir (" z es primo ")
+
+            Fin Mientras
+
+    Fin
+
+
+
 ```
     
 - Diagrama de flujo:
