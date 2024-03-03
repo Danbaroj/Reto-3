@@ -3,6 +3,14 @@
 1.Plantear el algoritmo para obtener los números primos hasta n, usando pseudocódigo y diagramas de flujo.
 
 - Pseudocodigo:
+
+```pseudocode
+
+    n : entero
+    Z : entero
+    Inicio
+    i: 0 < i <= 10      
+```
     
 - Diagrama de flujo:
 
