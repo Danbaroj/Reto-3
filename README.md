@@ -11,7 +11,7 @@
 flowchart TD;
     A(Inicio) -->B[Numero n]
     B -->F[Lista de n > 2]
-    F -->Q[ 0 < i]
+    F -->Q[ i > 0]
     Q -->J[ i >= 10 ]
     J -->K[z > n]
     K -->C[2*i 
