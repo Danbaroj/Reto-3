@@ -115,6 +115,8 @@ flowchart TD;
                                 Pasar a la siguiente pareja de n
                            
                     Repetir ahora x=xz
+            Fin Mientras
+        Fin
 ```
 
 - Diagrama de flujo
