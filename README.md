@@ -97,24 +97,23 @@ flowchart TD;
                         escribir ("x es raiz de n")
                     Si no
                         Pasar a la siguiente pareja de n;
-                                Mientras z^2 <= la siguiente pareja de digitos n Hacer
+                                Repetir z^2 menor o igual a la siguiente pareja de digitos n Hacer
                                     Si (Siguiente pareja de digitos de n - 2x*(z*z)=0)
                                         Si (n < 10000) entonces
                                             escribir ("xy son la raiz de n")
                                         Si no
                                             Pasar a la siguiente pareja de n;
-                                Repetir ahora x = xz
-//¿Como se usa repetir o como puedo hacer repetir una secuencia?
+                                Hasta que el numero n se quede sin parejas de digitos para usar y donde ahora x = xz
                 Si no
                     agrupar el resultado de la resta con la siguiente pareja de digitos del numero n;
-                    Mientras z^2 <= la siguiente pareja de digitos n con el resultado de la resta Hacer
+                    Repetir z^2 <= la siguiente pareja de digitos n con el resultado de la resta Hacer
                          Si (Siguiente pareja de digitos de n - 2x*(z*z)=0)
                             si (n < 10000) entonces
                                 Escribir ("xy son la raiz de n")
                             Si no
                                 Pasar a la siguiente pareja de n
                            
-                    Repetir ahora x=xz
+                    Hasta que el numero n se quede sin parejas de digitos para usar y donde ahora x = xz
             Fin Mientras
         Fin
 ```
@@ -139,7 +138,7 @@ flowchart TD;
     con la siguiente pareja de digitos]
     G -->H[Duplicar x]
     H -->M[Encontrar un z^2 que al multiplicarlo con
-    el doble de x sea <= a la pareja agrupada con el
+    el doble de x sea menor o igual a la pareja agrupada con el
     resultado de las resta]
     M -->N[Restar los digitos agrupados con 2x*z^2]
     L -->Ñ[Encontrar un z^2 que al multiplicarlo con
