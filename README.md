@@ -1,6 +1,6 @@
 # Reto #3
 
-1.Plantear el algoritmo para obtener los números primos hasta n, usando pseudocódigo y diagramas de flujo.
+1. Plantear el algoritmo para obtener los números primos hasta n, usando pseudocódigo y diagramas de flujo.
 
 - Pseudocodigo:
 
@@ -79,7 +79,81 @@ flowchart TD;
     R -->E(Fin)
 ```
 
+2. Revise el procedimiento matemático para hallar raíces cuadradas (son divisiones y restas), plantee el algoritmo en pseudocódigo y en diagrama de flujo.
 
-Revise el procedimiento matemático para hallar raíces cuadradas (son divisiones y restas), plantee el algoritmo en pseudocódigo y en diagrama de flujo.
+- Pseudocodigo:
 
-Cree un repositorio en github en donde muestre el desarrollo de la actividad y comparta el enlace por el canal de slack reto_3.
+```pseudocode
+
+    n : Entero
+    x : Entero
+    z : Entero
+
+    Inicio
+        Dividir n en parejas de digitos;
+            Mientras x^2 <= primera pareja de digitos de n Hacer
+                Si (Primera pareja de digitos de n - x^2)=0
+                    Si (n < 100) entonces
+                        escribir ("x es raiz de n")
+                    Si no
+                        Pasar a la siguiente pareja de n;
+                                Mientras z^2 <= la siguiente pareja de digitos n Hacer
+                                    Si (Siguiente pareja de digitos de n - 2x*(z*z)=0)
+                                        Si (n < 10000) entonces
+                                            escribir ("xy son la raiz de n")
+                                        Si no
+                                            Pasar a la siguiente pareja de n;
+                                Repetir ahora x = xz
+//¿Como se usa repetir o como puedo hacer repetir una secuencia?
+                Si no
+                    agrupar el resultado de la resta con la siguiente pareja de digitos del numero n;
+                    Mientras z^2 <= la siguiente pareja de digitos n con el resultado de la resta Hacer
+                         Si (Siguiente pareja de digitos de n - 2x*(z*z)=0)
+                            si (n < 10000) entonces
+                                Escribir ("xy son la raiz de n")
+                            Si no
+                                Pasar a la siguiente pareja de n
+                           
+                    Repetir ahora x=xz
+```
+
+- Diagrama de flujo
+
+```mermaid
+flowchart TD;
+    A(Inicio) -->B[Numero n]
+    B -->C[Dividir el numero n en parejas de digitos]
+    C -->D[Encontrar un numero x,
+    donde 
+    x^2 <= primer grupo de digitos de n]
+    D -->E[ Primer pareja de digitos - x^2 ]
+    E -->F{¿Su resultado es 0?}
+    F -->|Si|I{¿Su numero n era un numero
+     con dos digitos?}
+    I -->|Si|J[x es el la raiz de n]
+    I -->|No|K[Pase a la siguiente pareja]
+    K -->L[Duplicar x]
+    F -->|No|G[Agrupar el resultado de la resta
+    con la siguiente pareja de digitos]
+    G -->H[Duplicar x]
+    H -->M[Encontrar un z^2 que al multiplicarlo con
+    el doble de x sea <= a la pareja agrupada con el
+    resultado de las resta]
+    M -->N[Restar los digitos agrupados con 2x*z^2]
+    L -->Ñ[Encontrar un z^2 que al multiplicarlo con
+    el doble de x sea <= a la siguiente pareja que se 
+    encontraba agrupada]
+    Ñ -->N
+    N -->O{¿La resta es 0?}
+    O -->|Si|P{¿Su numero n era de 4 digitos?}
+    O -->|No|S[Agrupar el resultado de la resta con
+    la siguiente pareja de digitos]
+    S -->U[Repita pero ahora x = x y z unidos como digitos]
+    U -->H
+    P -->|Si|Q[El numero x y z,unidos como digitos
+    son la raiz de n]
+    P -->|No|R[Pase a la siguiente pareja]
+    R -->T[Repita, pero ahora x = x y z unidos como digitos]
+    T -->L
+    Q -->V(Fin)
+```
